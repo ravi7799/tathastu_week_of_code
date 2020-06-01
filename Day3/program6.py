@@ -1,38 +1,27 @@
-def makesumlist(list1):
-    list1.sort()
-    print(list1)
-    l=list(list1)
-    sum=0
-    sumlist=[]
-    sumlist.extend(list1)
-    print(sumlist)
+nlist=[]
+
+
+def sum(l,s=0):
     for i in l:
-        l=list1
-        l.remove(i)
-        list2=list(l)
-        for j in list2:
-            sum=int(i)+int(j)
-            sumlist.append(str(sum))
-    return sumlist
+        nlist.append(s+i)
+        l1=list(l)
+        l1.remove(i)
+        sum(l1,s+i)
+
+n=int(input("enter the size of list:"))
+list1=[]
+for i in range(n):
+    list1.append(int(input("enter the value:")))
+j=1
+list1.sort()
+sum(list1)
 
 
+while True:
+    if j not in nlist:
+        print(j)
+        print()
+        break
+    else:
+        j=j+1
 
-def program6():
-    n=int(input("enter the size of list:"))
-    list1=[]
-    for i in range(n):
-        list1.extend(input("enter the value:"))
-    j=1
-    list1.sort()
-    sumlist=list(makesumlist(list1))
-    s1=set(sumlist)
-    sumlist=list(s1)
-    print(sumlist)
-    while True:
-        if str(j) not in sumlist:
-            return j
-        else:
-            j=j+1
-
-c=program6()
-print(c)
