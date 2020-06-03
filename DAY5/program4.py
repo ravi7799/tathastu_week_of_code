@@ -7,9 +7,17 @@ def knapSack(W, wt, val, n):
         return max(val[n-1] + knapSack(W-wt[n-1], wt, val, n-1),
                    knapSack(W, wt, val, n-1))
 
-val1 = [10,30,80,100]
-wt1 = [2,8,5,6]
+n=int(input("enter the number of weight and value pair you want to add")
+val1 = []
+for i in range(n):
+      val1[i].append(int(input("enter value:")))
+      
+
+wt1 = []
+for i in range(n):
+      wt11[i].append(int(input("enter value:")))    
+      
+
 wt1.sort()
-W =8
-n = len(val1)
+W =int(input("enter the maximum weight"))
 print(knapSack(W, wt1, val1, n))
